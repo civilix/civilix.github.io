@@ -1,21 +1,16 @@
 document.getElementById("life-expectancy").onsubmit = function() {
     event.preventDefault(); 
-    // let gender = document.getElementById("gender").value;
-    // let dob = new Date(document.getElementById("dob").value);
-    // let smoking = document.getElementById("smoking").value;
-    // let drinking = document.getElementById("drinking").value;
-    let gender = "male";
-    let dob = new Date(2000,9,16).valueOf();
-    let smoking = "yes";
-    let drinking = "yes";
+    let gender = document.getElementById("gender").value;
+    let dob = new Date(document.getElementById("dob").value);
+    let smoking = document.getElementById("smoking").value;
+    let drinking = document.getElementById("drinking").value;
     const timeLeft = document.getElementById("timeLeft");
     // 予想寿命を計算する 
     const lifeExpectancy = calculate(gender, smoking, drinking);
     // カウントダウンをする
-    timeLeft.style.color = "red";
     countdown(lifeExpectancy, dob);
     // フォームを隠す
-    document.getElementById("life-expectancy-form").classList.add("hidden");
+    document.getElementById("life-expectancy").classList.add("hidden");
 }
 // 予想寿命を計算する関数
 function calculate(gender, smoking, drinking) {
