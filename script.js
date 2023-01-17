@@ -14,6 +14,8 @@ document.getElementById("life-expectancy").onsubmit = function() {
     // カウントダウンをする
     timeLeft.style.color = "red";
     countdown(lifeExpectancy, dob);
+    // フォームを隠す
+    document.getElementById("life-expectancy-form").classList.add("hidden");
 }
 // 予想寿命を計算する関数
 function calculate(gender, smoking, drinking) {
