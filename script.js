@@ -1,10 +1,11 @@
-document.getElementById("life-expectancy").onsubmit = function() {
+document.getElementById("life-expectancy").onsubmit = function(event) {
     event.preventDefault(); 
     let gender = document.getElementById("gender").value;
     let dob = new Date(document.getElementById("dob").value);
     let smoking = document.getElementById("smoking").value;
     let drinking = document.getElementById("drinking").value;
     const timeLeft = document.getElementById("timeLeft");
+    const endTime = document.getElementById("endTime");
     // 予想寿命を計算する 
     const lifeExpectancy = calculate(gender, smoking, drinking);
     // カウントダウンをする
@@ -40,7 +41,8 @@ function countdown(year,dob) {
     //「終わる日」を計算する
     const milli = year * 365 * 24 * 60 * 60 * 1000;
     const now = new Date().valueOf();
-    const end = dob + milli;
+    const end = dob.valueOf() + milli;
+    /*endTime.textContent = new Date(end).toLocaleString();*/
     // カウントダウンをする
     setInterval(() => {
         const secondsLeft = Math.round((end - Date.now()) / 1000);
@@ -49,7 +51,6 @@ function countdown(year,dob) {
 }
 
 function displayTimeLeft(secondsLeft) {
-    console.log(secondsLeft);
     const days = Math.floor(secondsLeft / 24 / 60 / 60);
     secondsLeft = secondsLeft % 86400;
     const hours = Math.floor(secondsLeft / 60 / 60);
