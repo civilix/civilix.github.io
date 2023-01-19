@@ -14,6 +14,9 @@ document.getElementById("life-expectancy").onsubmit = function(event) {
     countdown(lifeExpectancy, dob);
     // フォームを隠す
     document.getElementById("life-expectancy").classList.add("hidden");
+    // ヒントを表示する
+    if (smoking == "yes") {document.getElementById("smoking-tip").classList.remove("hidden");}
+    if (drinking == "yes") {document.getElementById("drinking-tip").classList.remove("hidden");}
 }
 // 予想寿命を計算する関数
 function calculate(gender, smoking, drinking) {
@@ -22,12 +25,15 @@ function calculate(gender, smoking, drinking) {
     let result = 0;
     if (gender == "male") {result = 81.47;}
     else if (gender == "female") {result = 87.57;}
+    //　喫煙の影響
     // Center for Disease Control and Prevention (CDC)
     //https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/tobacco_related_mortality/index.htm#:~:text=Cigarette%20smoking%20causes%20premature%20death,years%20shorter%20than%20for%20nonsmokers.&text=Quitting%20smoking%20before%20the%20age,related%20disease%20by%20about%2090%25.
     if (smoking == "yes") {result -= 10.0;}
+    // 飲酒の影響
     // Scientific Reports
     //https://www.nature.com/articles/s41598-022-11427-x#:~:text=In%20conclusions%2C%20modest%20drinkers%2C%20no,65%E2%80%9380%25)%20of%20drinkers.
-    if (drinking == "yes") {result -= 7.0;}
+    if (drinking == "negative") {result -= 7.0;}
+    else if (drinking == "positive") {result += 1.0;}
     return result;
 }
 // カウントダウンをする関数

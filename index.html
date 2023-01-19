@@ -24,14 +24,17 @@
     <br>
     <label for="drinking">飲酒:</label>
     <select id="drinking" name="drinking">
-      <option value="no">いいえ(一日一回未満を含む)</option>
-      <option value="yes">はい(一日二回以上)</option>
+      <option value="no">飲まない</option>
+      <option value="positive">一日一回以下</option>
+      <option value="negative">一日二回以上</option>
     </select>
     <br>
     <button type="submit">計算する</button>
   </form>
   <h2 id="timeLeft"></h2>
   <p id="endTime"></p>
+  <p id="smoking-tip" class="hidden">アメリカ国際安全衛生センターcdcの調査によると、喫煙者の平均寿命は非喫煙者より少なくとも10年短いです。</p>
+  <p id="drinking-tip" class="hidden">サイエンティフィック・リポーツの調査によると、一日二回以上にお酒を飲む人の平均寿命は普通の人より7年短いです。</p>
   <script src="script.js"></script>
 </body>
 </html>
