@@ -6,7 +6,6 @@ document.getElementById("life-expectancy").onsubmit = function(event) {
     let drinking = document.getElementById("drinking").value;
     const timeLeft = document.getElementById("timeLeft");
     const endTime = document.getElementById("endTime");
-    window.alert('${gender} ${dob} ${smoking} ${drinking}');
     // 予想寿命を計算する 
     const lifeExpectancy = calculate(gender, smoking, drinking);
     // カウントダウンをする
@@ -19,22 +18,14 @@ function calculate(gender, smoking, drinking) {
     // 厚生労働省　令和３年簡易生命表の概況　主な年齢の平均余命 
     // https://www.mhlw.go.jp/toukei/saikin/hw/life/life21/dl/life18-02.pdf
     let result = 0;
-    if (gender == "male"){
-  	    result = 81.47;
-    }
-    else if (gender == "female"){
-  	    result = 87.57;
-    }
+    if (gender == "male") {result = 81.47;}
+    else if (gender == "female") {result = 87.57;}
     // Center for Disease Control and Prevention (CDC)
     //https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/tobacco_related_mortality/index.htm#:~:text=Cigarette%20smoking%20causes%20premature%20death,years%20shorter%20than%20for%20nonsmokers.&text=Quitting%20smoking%20before%20the%20age,related%20disease%20by%20about%2090%25.
-    if (smoking == "yes"){
-  	    result -= 10.0;
-    }
+    if (smoking == "yes") {result -= 10.0;}
     // Scientific Reports
     //https://www.nature.com/articles/s41598-022-11427-x#:~:text=In%20conclusions%2C%20modest%20drinkers%2C%20no,65%E2%80%9380%25)%20of%20drinkers.
-    if (drinking == "yes"){
-        result -= 7.0;
-    }
+    if (drinking == "yes") {result -= 7.0;}
     return result;
 }
 // カウントダウンをする関数
