@@ -2,33 +2,36 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<form id="life-expectancy">
-  <label for="gender">性別:</label>
-  <select id="gender" name="gender">
-    <option value="male">男性</option>
-    <option value="female">女性</option>
-  </select>
-  <br>
-  <label for="dob">生年月日:</label>
-  <input type="date" id="dob" name="dob">
-  <br>
-  <label for="smoking">喫煙:</label>
-  <select id="smoking" name="smoking">
-    <option value="yes">はい</option>
-    <option value="no">いいえ</option>
-  </select>
-  <br>
-  <label for="drinking">飲酒:</label>
-  <select id="drinking" name="drinking">
-    <option value="yes">はい(一日二回以上)</option>
-    <option value="no">いいえ(一日一回未満を含む)</option>
-  </select>
-  <br>
-  <button type="submit">計算する</button>
-</form>
+<body>
+  <form id="life-expectancy">
+    <label for="gender">性別:</label>
+    <select id="gender" name="gender">
+      <option value="male">男性</option>
+      <option value="female">女性</option>
+    </select>
+    <br>
+    <label for="dob">生年月日:</label>
+    <input type="date" id="dob" name="dob">
+    <br>
+    <label for="smoking">喫煙:</label>
+    <select id="smoking" name="smoking">
+      <option value="yes">はい</option>
+      <option value="no">いいえ</option>
+    </select>
+    <br>
+    <label for="drinking">飲酒:</label>
+    <select id="drinking" name="drinking">
+      <option value="yes">はい(一日二回以上)</option>
+      <option value="no">いいえ(一日一回未満を含む)</option>
+    </select>
+    <br>
+    <button type="submit">計算する</button>
+  </form>
   <h1 id="timeLeft"></h1>
   <p id="endTime"></p>
+  <script src="script.js"></script>
+</body>
 </html>
