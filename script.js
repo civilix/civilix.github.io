@@ -1,9 +1,9 @@
 document.getElementById("life-expectancy").onsubmit = function(event) {
     event.preventDefault(); 
-    let gender = document.getElementById("gender").value;
-    let dob = new Date(document.getElementById("dob").value);
-    let smoking = document.getElementById("smoking").value;
-    let drinking = document.getElementById("drinking").value;
+    const gender = document.getElementById("gender").value;
+    const dob = new Date(document.getElementById("dob").value);
+    const smoking = document.getElementById("smoking").value;
+    const drinking = document.getElementById("drinking").value;
     const timeLeft = document.getElementById("timeLeft");
     const endTime = document.getElementById("endTime");
     // 予想寿命を計算する 
