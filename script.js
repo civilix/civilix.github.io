@@ -1,9 +1,11 @@
 document.getElementById("life-expectancy").onsubmit = function(event) {
     event.preventDefault(); 
+    // フォームの値を取得する
     const gender = document.getElementById("gender").value;
     const dob = new Date(document.getElementById("dob").value);
     const smoking = document.getElementById("smoking").value;
     const drinking = document.getElementById("drinking").value;
+    // HTML要素を取得する
     const timeLeft = document.getElementById("timeLeft");
     const endTime = document.getElementById("endTime");
     // 予想寿命を計算する 
@@ -34,6 +36,7 @@ function countdown(year,dob) {
     const milli = year * 365 * 24 * 60 * 60 * 1000;
     const now = new Date().valueOf();
     const end = dob.valueOf() + milli;
+    // 「終わる日」の表示も可能
     /*endTime.textContent = new Date(end).toLocaleString();*/
     // カウントダウンをする
     setInterval(() => {
