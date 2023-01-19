@@ -6,6 +6,7 @@ document.getElementById("life-expectancy").onsubmit = function(event) {
     let drinking = document.getElementById("drinking").value;
     const timeLeft = document.getElementById("timeLeft");
     const endTime = document.getElementById("endTime");
+    window.alert('${gender} ${dob} ${smoking} ${drinking}');
     // 予想寿命を計算する 
     const lifeExpectancy = calculate(gender, smoking, drinking);
     // カウントダウンをする
