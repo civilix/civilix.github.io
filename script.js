@@ -15,8 +15,14 @@ document.getElementById("life-expectancy").onsubmit = function(event) {
     // フォームを隠す
     document.getElementById("life-expectancy").classList.add("hidden");
     // ヒントを表示する
-    if (smoking == "yes") {document.getElementById("smoking-tip").classList.remove("hidden");}
-    if (drinking == "yes") {document.getElementById("drinking-tip").classList.remove("hidden");}
+    if (smoking == "yes") {
+        document.getElementById("smoking-tip").classList.remove("hidden");
+        document.getElementById("smoking-tip").classList.add("show");
+    }
+    if (drinking == "yes") {
+        document.getElementById("drinking-tip").classList.remove("hidden");
+        document.getElementById("smoking-tip").classList.add("show");
+    }
 }
 // 予想寿命を計算する関数
 function calculate(gender, smoking, drinking) {
@@ -44,13 +50,15 @@ function countdown(year,dob) {
     const end = dob.valueOf() + milli;
     // 「終わる日」の表示も可能
     /*endTime.textContent = new Date(end).toLocaleString();*/
+    const secondsLeft = Math.round((end - Date.now()) / 1000);
+    displayTimeLeft(secondsLeft);
     // カウントダウンをする
     setInterval(() => {
         const secondsLeft = Math.round((end - Date.now()) / 1000);
         displayTimeLeft(secondsLeft);
     },1000);
 }
-
+// 残り時間を表示する関数
 function displayTimeLeft(secondsLeft) {
     const days = Math.floor(secondsLeft / 24 / 60 / 60);
     secondsLeft = secondsLeft % 86400;

@@ -9,3 +9,23 @@ body {
 .hidden {
     display: none;
 }
+
+p#smoking-tip, p#drinking-tip {
+    font-size: 0.8em;
+}
+
+p#smoking-tip, p#drinking-tip {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+p#smoking-tip.show, p#drinking-tip.show {
+    animation: fadeIn 5s;
+    opacity: 1;
+}
+
