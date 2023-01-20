@@ -7,7 +7,7 @@ body {
 }
 
 .hidden {
-    display: none;
+    display: none;  
 }
 
 p#smoking-tip, p#drinking-tip {
